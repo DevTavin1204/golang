@@ -1,20 +1,35 @@
 package main
-import ("fmt")
+
+import (
+	"fmt"
+	
+)
 func main(){
-  var numeros = [5]int{}
-  var soma int
+   age := 45
+   fmt.Println(age <= 50)
+   fmt.Println(age >= 50)
+   fmt.Println(age == 50)
+   fmt.Println(age != 50)
 
- fmt.Println("escolha o primeiro numero:")
- fmt.Scan(&numeros[0])
- fmt.Println("escolha o segundo numero:")
- fmt.Scan(&numeros[1])
- fmt.Println("escolha o terceiro numero:")
- fmt.Scan(&numeros[2])
- fmt.Println("escolha o quarto numero:")
- fmt.Scan(&numeros[3])
- fmt.Println("escolha o quinto numero:")
- fmt.Scan(&numeros[4])
+   if age < 30{
+      fmt.Println("menor que 30 anos")
+}else if age < 40{
+   fmt.Println("menor que 40 anos")
+}else {
+   fmt.Println("Não é menor que 40 anos")
+}
 
-soma = numeros[0]+numeros[1]+numeros[2]+numeros[3]+numeros[4]
- fmt.Println("A soma dos numeros é:", soma)
+names := []string{"Otávio", "Denise", "Fabricio", "Gojo", "Neymar"}
+
+for index, value := range names{
+   if index == 0{
+      fmt.Println("continue após a posição", index, "e valor", value)
+      continue
+   }
+   if index > 3{
+       fmt.Println("sair após", index)
+       break
+   }
+   fmt.Println("valor:", value)
+}
  }
