@@ -3,20 +3,20 @@ package main
 import ("fmt")
 
 func main(){
-   capitais := map[string]string{
-    "SP" : "São paulo",
-    "RJ" : "Rio de janeiro",
-    "ES" : "Espirito Santo",
-    "AC" : "Acre",
+  estoque := make(map[string]int)
+   
+   estoque["Coxinha"] = 15
+   estoque["Pão de queijo"] = 10
+   estoque["Refrigeirante"] = 20
+
+  for produtos, quantidade := range estoque {
+    fmt.Println("Produto, Quantidade:", produtos, quantidade) 
    }
-  capitais["BH"] = "Belo Horizonte"
-
-  for k, v := range capitais {
-    fmt.Println("Sigla, Nome:", k, v)
-  }
-  delete(capitais, "AC")
-
-  for k, v := range capitais {
-    fmt.Println("Sigla, Nome:", k, v)
-  }
+   
+  estoque["Coxinha"] = 13
+  estoque["Pão de queijo"] = 9
+   
+   for produtos, quantidade := range estoque {
+    fmt.Println("Produto, Quantidade:", produtos, quantidade) 
+    }
  }
