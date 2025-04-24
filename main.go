@@ -1,28 +1,19 @@
 package main
 
 import ("fmt")
- func dividir(dividendo int, divisor int) (int, string){
-    if divisor == 0 {
-      return 0, "Erro na divisão por zero"
-    }
-    return dividendo / divisor, ""
- }
-func operacaoBasica(a int, b int)(int, int, int){
-  soma := a + b 
-  multiplicacao := a * b
-  subtracao := a - b
-  return soma, multiplicacao, subtracao
-}
- func main(){
-   resultado, erro := dividir(10,2)
+ var resposta string
+ var media int
 
-   if erro != ""{
-    fmt.Println(erro)
-   }else {
-    fmt.Println("O resultado da divisão é:", resultado)
-   }
-   soma, mult, sub := operacaoBasica(10,2)
-   fmt.Println(soma)
-   fmt.Println(mult)
-   fmt.Println(sub)
+ func analisarNotas(nota1, nota2 float64)(float64, string){
+  media := (nota1 + nota2) / 2
+  if media >= 6{
+   return media, "Aprovado"
+  }else {
+   return media, "Reprovado"
+  }
+}
+func main(){
+   media, resposta := analisarNotas(7.5, 5.5)
+   fmt.Println("Media:", media)
+   fmt.Println("Resultado", resposta)
  }
